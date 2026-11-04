@@ -1,0 +1,26 @@
+for ($i = 1; $i -le 3; $i++){
+    write-host "VERIFICACION NUMERO: $i"
+
+write-host""
+write-host "Fecha y Hora: $(Get-Date -Format 'dd/MM/yyyy HH:mm:ss')"
+
+write-host "`nAdaptadores de Red activos:"
+Get-NetAdapter | Where-Object {
+    $_.Status -eq 'Up'
+    } | Format-Table Name, InterfaceDescription, Status
+
+    if ($i % 2 -eq 0){
+        write-host "La iteracion $i es par"
+    }
+    else{
+        write-host "La iteracion $i es impar"
+    }
+start-sleep -seconds 2
+}
+
+write-host "------------------------------------------"
+write-host ""
+write-host "monitoreo finalizado"
+write-host "Se completaron las 3 verificaciones"
+write-host ""
+write-host "------------------------------------------"
