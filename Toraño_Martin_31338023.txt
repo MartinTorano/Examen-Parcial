@@ -24,3 +24,9 @@ write-host "monitoreo finalizado"
 write-host "Se completaron las 3 verificaciones"
 write-host ""
 write-host "------------------------------------------"
+
+
+
+
+
+https://github.com/MartinTorano/Examen-Parcial.git
